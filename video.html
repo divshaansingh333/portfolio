@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Video - Divshaan Singh Brar</title>
-  <meta name="description" content="Video project: A Day in My Life as a Lab Tech — hands-on maker-lab work and editing skills." />
+  <meta name="description" content="A day in the life of a lab technician—showcasing production equipment and editing skills.">
   <meta property="og:title" content="Video — Divshaan Singh Brar" />
-  <meta property="og:description" content="A Day in My Life as a Lab Tech: showcasing production equipment and video editing." />
+  <meta property="og:description" content="Maker lab vlog with custom video controls and editing." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://divshaan.github.io/video.html" />
   <link rel="canonical" href="https://divshaan.github.io/video.html" />
@@ -32,14 +32,27 @@
   <main id="main">
     <section class="page-section">
       <h2>&lt;Video /&gt;</h2>
+
       <div class="project-detail-showcase">
         <h3>A Day in My Life as a Lab Tech</h3>
         <p class="project-description">
-          This video offers a dynamic glimpse into my role as a Lab Technician at George Brown College's Maker Lab. It showcases my hands-on experience with advanced design equipment and highlights my video editing skills, blending practical lab work with creative storytelling.
+          This video offers a dynamic glimpse into my role as a Lab Technician at George Brown College's Maker Lab. It showcases hands-on experience with advanced design equipment and highlights video editing skills.
         </p>
+
+        <!-- Replace the URL below with your real YouTube watch link (or share link). -->
         <div class="video-player-wrapper">
-          <video class="custom-video-player" src="./vid1.mp4" controls playsinline preload="metadata"></video>
+          <div class="youtube-embed" data-youtube="https://www.youtube.com/watch?v=VIDEO_ID"></div>
         </div>
+
+        <!-- If you also want a local MP4 fallback, keep your custom player below (optional):
+        <div class="video-player-wrapper">
+          <video class="custom-video-player" src="./vid1.mp4" preload="metadata" playsinline></video>
+          <div class="custom-controls">
+            <button id="play-pause-btn" class="control-btn play-btn" aria-label="Play/Pause"></button>
+            <input type="range" id="progress-bar" class="progress-bar" value="0" min="0" max="100" aria-label="Seek">
+            <div id="time-display" class="time-display" aria-live="off">00:00 / 00:00</div>
+          </div>
+        </div> -->
       </div>
     </section>
   </main>
