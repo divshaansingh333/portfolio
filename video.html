@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video - Divshaan Singh Brar</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video - Divshaan Singh Brar</title>
+  <meta name="description" content="Video project: A Day in My Life as a Lab Tech — hands-on maker-lab work and editing skills." />
+  <meta property="og:title" content="Video — Divshaan Singh Brar" />
+  <meta property="og:description" content="A Day in My Life as a Lab Tech: showcasing production equipment and video editing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://divshaan.github.io/video.html" />
+  <link rel="canonical" href="https://divshaan.github.io/video.html" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <div id="page-transition-overlay"></div>
-    <header class="main-header">
-        <div class="logo">DSB</div>
-        <nav>
-            <a href="index.html">HOME</a>
-            <a href="work.html">WORK</a>
-            <a href="about.html">ABOUT</a>
-            <a href="contact.html">CONTACT</a>
-        </nav>
-    </header>
+  <a class="visually-hidden-focusable" href="#main">Skip to content</a>
+  <div id="page-transition-overlay"></div>
 
-    <main>
-        <section class="page-section">
-            <h2>&lt;Video /&gt;</h2>
-            <div class="project-detail-showcase">
-                <h3>A Day in My Life as a Lab Tech</h3>
-                <p class="project-description">
-                    This video showcases a day in the life of a lab technician, highlighting skills with various production equipment and demonstrating video and audio editing capabilities.
-                </p>
-                <div class="video-player-wrapper">
-                    <video class="custom-video-player" src="./vid1.mp4" playsinline></video>
-                    <div class="custom-controls">
-                        <button id="play-pause-btn" class="control-btn play-btn"></button>
-                        <input type="range" id="progress-bar" class="progress-bar" value="0" min="0" max="100">
-                        <div id="time-display" class="time-display">00:00 / 00:00</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+  <header class="main-header">
+    <div class="logo">DSB</div>
+    <nav aria-label="Primary">
+      <a href="index.html">HOME</a>
+      <a href="work.html">WORK</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
 
-    <footer>
-        <div class="footer-links">
-            <a href="mailto:singhbrardivshaan@gmail.com">EMAIL</a>
-            <a href="https://www.linkedin.com/in/divshaan-singh-brar-038b97251" target="_blank">LINKEDIN</a>
-            <a href="https://rgd.ca/members/profile/241008117" target="_blank">RGD PROFILE</a>
+  <main id="main">
+    <section class="page-section">
+      <h2>&lt;Video /&gt;</h2>
+      <div class="project-detail-showcase">
+        <h3>A Day in My Life as a Lab Tech</h3>
+        <p class="project-description">
+          This video offers a dynamic glimpse into my role as a Lab Technician at George Brown College's Maker Lab. It showcases my hands-on experience with advanced design equipment and highlights my video editing skills, blending practical lab work with creative storytelling.
+        </p>
+        <div class="video-player-wrapper">
+          <video class="custom-video-player" src="./vid1.mp4" controls playsinline preload="metadata"></video>
         </div>
-        <p>&copy; 2025 Divshaan Singh Brar. All rights reserved.</p>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:singhbrardivshaan@gmail.com">EMAIL</a>
+      <a href="https://www.linkedin.com/in/divshaan-singh-brar-038b97251" target="_blank" rel="noopener">LINKEDIN</a>
+      <a href="https://rgd.ca/members/profile/241008117" target="_blank" rel="noopener">RGD PROFILE</a>
+    </div>
+    <p>&copy; 2025 Divshaan Singh Brar. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
