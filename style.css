@@ -930,3 +930,22 @@ h1, h2, h3, h4 { font-family: var(--font-secondary); font-weight: 700; }
   position: static; width: auto; height: auto; padding: .5rem 1rem;
   background: #000; color: var(--accent-color); z-index: 2000;
 }
+/* Accessibility skip link */
+.visually-hidden-focusable {
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.visually-hidden-focusable:focus {
+  position: static; width: auto; height: auto; padding: .5rem 1rem;
+  background: #000; color: var(--accent-color); z-index: 2000;
+}
+
+/* Ensure slider arrows are positioned when under .project-image */
+.project-image .prev, .project-image .next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  padding: 16px; font-weight: bold; font-size: 20px;
+  background-color: rgba(0,0,0,0.3); color: #fff; user-select: none;
+  transition: 0.6s ease; border-radius: 0 3px 3px 0; cursor: pointer;
+}
+.project-image .next { right: 0; border-radius: 3px 0 0 3px; }
+.project-image .prev:hover, .project-image .next:hover { background-color: rgba(0,0,0,0.8); }
+
