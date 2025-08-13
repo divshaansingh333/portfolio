@@ -348,3 +348,57 @@ if (videoPlayer) {
         videoPlayer.currentTime = (progressBar.value / 100) * videoPlayer.duration;
     });
 }
+
+/* === DSB minimal additions v2 (guarded) === */
+(function(){
+  if (window.__DSB_ENHANCED__) return;
+  window.__DSB_ENHANCED__ = true;
+
+  // Nav highlight for current page
+  try {
+    const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    document.querySelectorAll('header nav a').forEach(a => {
+      const h = (a.getAttribute('href') || '').toLowerCase();
+      if (h.endsWith(current)) a.setAttribute('aria-current', 'page');
+    });
+  } catch(e) {}
+
+  // Robust slider init that targets arrows under .project-image
+  try {
+    const cards = document.querySelectorAll('.project-card[data-slider]');
+    cards.forEach(card => {
+      if (card.dataset.dsbInit) return; // avoid double-binding with existing slider
+      const imageWrap = card.querySelector('.project-image');
+      if (!imageWrap) return;
+
+      const slides = imageWrap.querySelectorAll('.slide');
+      const prev = imageWrap.querySelector('.prev');
+      const next = imageWrap.querySelector('.next');
+      if (slides.length <= 1) {
+        if (prev) prev.style.display = 'none';
+        if (next) next.style.display = 'none';
+        return;
+      }
+
+      let i = 0, timerId;
+
+      const show = n => {
+        i = (n + slides.length) % slides.length;
+        slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+      };
+      const nextSlide = () => show(i + 1);
+      const start = () => { stop(); timerId = setInterval(nextSlide, 3000); };
+      const stop  = () => { if (timerId) clearInterval(timerId); };
+
+      if (prev) prev.addEventListener('click', e => { e.stopPropagation(); show(i - 1); stop(); });
+      if (next) next.addEventListener('click', e => { e.stopPropagation(); nextSlide(); stop(); });
+
+      imageWrap.addEventListener('mouseenter', stop);
+      imageWrap.addEventListener('mouseleave', start);
+
+      show(0);
+      start();
+      card.dataset.dsbInit = '1';
+    });
+  } catch(e) {}
+})();
